@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/classes-859a5c1e3efc8ddf2ead8bf5e170d0ac997d5d6d.jar" />
+    </item>
+    <item
+        jar="/Users/controlberkani/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-c9560d9e2cacb7dce152cc3abaf548d722b9a685.jar" />
+    </item>
+    <item
+        jar="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cb10a98761e536c7f8fcdf6e51269115a5ca8068.jar" />
+    </item>
+    <item
+        jar="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/classes-87278bc66399a7260d568372ebed9b72598ce2e5.jar" />
+    </item>
+
+</items>
