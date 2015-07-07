@@ -2,6 +2,7 @@ package com.coap.chenillard;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,7 +17,7 @@ public class Main_chenil extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
-        Buton=(Button)findViewById(R.id.b1);
+        //Buton=(Button)findViewById(R.id.b1);
        // Toast t=Toast.makeText(this,"yes",Toast.LENGTH_LONG);
         //t.show();
     }
@@ -27,6 +28,7 @@ public class Main_chenil extends ActionBarActivity {
         Toast.makeText(this,"off",Toast.LENGTH_LONG).show();
         super.onStop();
     }
+
     @Override
     protected void onPause(){
        super.onPause();
@@ -45,8 +47,6 @@ public class Main_chenil extends ActionBarActivity {
     protected void onDestroy(){
         super.onDestroy();
         Toast.makeText(this,"offdes",Toast.LENGTH_LONG).show();
-
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

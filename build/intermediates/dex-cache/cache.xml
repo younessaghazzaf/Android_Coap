@@ -9,6 +9,13 @@
         <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/classes-859a5c1e3efc8ddf2ead8bf5e170d0ac997d5d6d.jar" />
     </item>
     <item
+        jar="/Users/controlberkani/github/Android_Coap/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/controlberkani/github/Android_Coap/app/build/intermediates/pre-dexed/debug/classes-ec5753692a5926f1e7bce485ffeead661758f1e8.jar" />
+    </item>
+    <item
         jar="/Users/controlberkani/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +28,20 @@
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-cb10a98761e536c7f8fcdf6e51269115a5ca8068.jar" />
+    </item>
+    <item
+        jar="/Users/controlberkani/github/Android_Coap/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/controlberkani/github/Android_Coap/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-32b51a697674d91ffecd61d76b1ad5e4ce419639.jar" />
+    </item>
+    <item
+        jar="/Users/controlberkani/github/Android_Coap/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/controlberkani/github/Android_Coap/app/build/intermediates/pre-dexed/debug/classes-a2c95d4dbbc13bbe3cee5e467f244fdef418255e.jar" />
     </item>
     <item
         jar="/Users/controlberkani/AndroidStudioProjects/Chenillard/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
