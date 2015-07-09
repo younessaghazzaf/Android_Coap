@@ -5,10 +5,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:background="@drawable/border2">
     <ImageButton
+        android:id="@+id/imageb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/add"
         android:backgroundTint="#fffefefe"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/remove"
+        android:layout_toRightOf="@+id/imageb1"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

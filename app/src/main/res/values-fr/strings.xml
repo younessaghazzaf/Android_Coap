@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="on">Activer</string>
+    <string name="off">Desactiver</string>
+    <string name="service">service</string>
+</resources>

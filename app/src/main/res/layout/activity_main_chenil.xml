@@ -2,9 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_height="fill_parent"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Main_chenil"
     android:orientation="horizontal"
     >
@@ -15,7 +13,20 @@
         android:layout_height="fill_parent"
         android:layout_weight=".6"
        >
-        
+        <com.coap.chenillard.Z1_controller
+            android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+         </com.coap.chenillard.Z1_controller>
+        <RelativeLayout
+            android:id="@+id/container1"
+            android:layout_below="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/radius_border">
+
+            </RelativeLayout>
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/l1"
@@ -30,6 +41,7 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content">
         </com.coap.chenillard.Z1_info>
+
     </LinearLayout>
 
 </LinearLayout>
