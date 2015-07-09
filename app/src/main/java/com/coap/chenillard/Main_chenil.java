@@ -1,25 +1,31 @@
 package com.coap.chenillard;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
-public class Main_chenil extends ActionBarActivity {
+public class Main_chenil extends Activity {
+
     View Buton;
     int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
-        //Buton=(Button)findViewById(R.id.b1);
-       // Toast t=Toast.makeText(this,"yes",Toast.LENGTH_LONG);
-        //t.show();
+        LayoutInflater n=getLayoutInflater();
+        RelativeLayout r=(RelativeLayout)findViewById(R.id.r1);
+        //Toast.makeText(this,n.getContext().toString(),Toast.LENGTH_LONG).show();
+
     }
 
     @Override
