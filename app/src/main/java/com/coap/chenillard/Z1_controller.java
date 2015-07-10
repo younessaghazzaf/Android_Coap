@@ -12,5 +12,6 @@ public class Z1_controller extends LinearLayout {
         super(context, attrs);
         LinearLayout r1=(LinearLayout)inflate(context,R.layout.z1_controller,null);
         this.addView(r1);
+
     }
 }

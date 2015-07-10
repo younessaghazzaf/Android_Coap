@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="horiz">1000px</dimen>
+    <dimen name="verti">1000px</dimen>
+
+</resources>

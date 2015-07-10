@@ -21,10 +21,12 @@
          </com.coap.chenillard.Z1_controller>
         <RelativeLayout
             android:id="@+id/container1"
-            android:layout_below="@+id/container"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:background="@drawable/radius_border">
+            android:layout_width="@dimen/horiz"
+            android:layout_height="@dimen/verti"
+            android:background="@drawable/radius_border"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            >
 
             </RelativeLayout>
     </RelativeLayout>
@@ -35,13 +37,17 @@
         android:layout_width="80px"
         android:layout_height="fill_parent"
         android:layout_weight=".4"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <com.coap.chenillard.Z1_info
           android:layout_width="wrap_content"
           android:layout_height="wrap_content">
         </com.coap.chenillard.Z1_info>
-
+        <ListView
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:divider="#ac2e2102"></ListView>
     </LinearLayout>
 
 </LinearLayout>

@@ -11,6 +11,7 @@
         android:src="@drawable/add"
         android:backgroundTint="#fffefefe"/>
     <ImageButton
+        android:id="@+id/imageb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/remove"
