@@ -49,7 +49,6 @@ public class Main_chenil extends Activity {
         adapter=new adapt(model,this);
         list=(ListView)findViewById(R.id.yes);
         adapter.setNotifyOnChange(true);
-
         list.setAdapter(adapter);
         adapter.add("aze");
         adapter.add("yes");
@@ -58,7 +57,7 @@ public class Main_chenil extends Activity {
         ImageButton b2=(ImageButton)findViewById(R.id.imageb2);
         b1.setOnClickListener(new Image_Listenner());
         //----------------------
-        Toast.makeText(this,"rr",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"rr",Toast.LENGTH_SHORT).show();
         d1=getResources().getDrawable(R.drawable.vert);
         d2=getResources().getDrawable(R.drawable.rouge);
 
@@ -148,7 +147,7 @@ public class Main_chenil extends Activity {
        @Override
        public void notifyDataSetChanged(){
            super.notifyDataSetChanged();
-           Toast.makeText(c,"zezeze",Toast.LENGTH_SHORT).show();
+           Toast.makeText(c,"Item Added",Toast.LENGTH_SHORT).show();
        }
        @Override
        public void add(String t){
