@@ -1,17 +1,16 @@
 package com.coap.chenillard;
 
-import android.app.DialogFragment;
-import android.app.FragmentManager;
+
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.support.v7.app.ActionBarActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -24,7 +23,10 @@ import android.widget.Toast;
 
 import com.coap.chenillard.model.Model;
 
+import java.util.ArrayList;
+
 public class Main_chenil extends Activity {
+    //--Initialisation of Views and model
     Button service;
     Boolean on=false;
     ListView list;
@@ -34,25 +36,47 @@ public class Main_chenil extends Activity {
     Model model;
     int i=0;
     adapt adapter;
+    ArrayList<Model> array;
+    /*
+    *
+    * Android build life Cycle
+    * -----------------------
+    * onCreate()
+    * onStop()
+    * onPause()
+    * onDestroy()
+    *
+    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
-        model=new Model(this);
+        //----State model
 
-        dialog = new Dialog();
-
+        array=new ArrayList<Model>();
         //l1 = (LinearLayout)getLayoutInflater().inflate(R.layout.z1_controller,null); // We can't add a layout that is the context of current activity
         service = (Button)findViewById(R.id.service);
         img1=(ImageView)findViewById(R.id.stateled);
-
-        adapter=new adapt(model,this);
+        //-----------List Adapter---------
+        adapter=new adapt(this);
         list=(ListView)findViewById(R.id.yes);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Main_chenil.this,array.get(position).get_id(),Toast.LENGTH_SHORT).show();
+
+            }
+        });
         adapter.setNotifyOnChange(true);
         list.setAdapter(adapter);
-        adapter.add("aze");
-        adapter.add("yes");
-        //---------------------
+        //---example Add to list ------
+        adapter.add(new Model("123","123.AZE123.","123","11"));
+        adapter.add(new Model("124","123.AZE123.","123","11"));
+        adapter.add(new Model("125","123.AZE123.","123","11"));
+        //--------Dialog show----------
+        dialog = new Dialog();
+        dialog.SetAddapter(adapter);
+        //------------Add/remove Button---------
         ImageButton b1=(ImageButton)findViewById(R.id.imageb1);
         ImageButton b2=(ImageButton)findViewById(R.id.imageb2);
         b1.setOnClickListener(new Image_Listenner());
@@ -61,6 +85,7 @@ public class Main_chenil extends Activity {
         d1=getResources().getDrawable(R.drawable.vert);
         d2=getResources().getDrawable(R.drawable.rouge);
 
+        //--------service On/off Listener button
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,6 +101,7 @@ public class Main_chenil extends Activity {
             }
         });
         //Toast.makeText(this,n.getContext().toString(),Toast.LENGTH_LONG).show();
+        //----------------------------------
 
     }
 
@@ -124,23 +150,24 @@ public class Main_chenil extends Activity {
 
         return super.onOptionsItemSelected(item);
     }*/
-    class adapt extends ArrayAdapter<String>{
-       Model model1;
+    class adapt extends ArrayAdapter<Model>{
+
        Context c;
-        adapt(Model m,Context c){
-            super(c,R.layout.liste_container,R.id.node_id,model.get_Ids());
+        adapt(Context c){
+            super(c,R.layout.liste_container,R.id.node_id,array);
             this.c=c;
-            model1=m;
         }
        @Override
        public View getView(int pos, View v,ViewGroup Root){
             View view=v;
             if(v==null){
                 LayoutInflater inflater=(LayoutInflater)c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                view=(RelativeLayout)inflater.inflate(R.layout.liste_container,Root,false);
+                view=(RelativeLayout)inflater.inflate(R.layout.liste_container,Root,false);}
                 TextView t=(TextView)view.findViewById(R.id.node_id);
-                Toast.makeText(c,t.getText(),Toast.LENGTH_SHORT).show();}
+                //Toast.makeText(c,"pos : "+pos,Toast.LENGTH_SHORT).show();
+                t.setText(array.get(pos).get_id());
 
+           //Toast.makeText(c,"pos : "+pos,Toast.LENGTH_SHORT).show();
            return view;
 
        }
@@ -148,12 +175,14 @@ public class Main_chenil extends Activity {
        public void notifyDataSetChanged(){
            super.notifyDataSetChanged();
            Toast.makeText(c,"Item Added",Toast.LENGTH_SHORT).show();
-       }
-       @Override
-       public void add(String t){
-          super.add(t);
+           //Toast.makeText(c,model.toString(),Toast.LENGTH_SHORT).show();
 
        }
+       @Override
+       public void add(Model t){
+          super.add(t);
+       }
+
    }
     class Image_Listenner implements View.OnClickListener {
 

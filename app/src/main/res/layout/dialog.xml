@@ -7,12 +7,15 @@
         android:layout_height="wrap_content"
         android:text="Id : "
         android:layout_gravity="center"
+
         />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="insert node Id"/>
+        android:hint="insert node Id"
+        android:id="@+id/edit_id"
+        android:inputType="number"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="Time Led"/>
+        android:hint="Time Led"
+        android:inputType="number"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,5 +49,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:hint="n=?"/>
+        android:hint="n=?"
+        android:inputType="number"/>
 </LinearLayout>

@@ -11,29 +11,48 @@ import java.util.ArrayList;
  * Created by controlberkani on 10/07/2015.
  */
 public class Model {
-    Context c;
-    private ArrayList<String> li=new ArrayList<String>();
-    private String[] node_id={"0","2","1"};
+    String id,ip,t,n;
 
-    public Model(Context con){
-        this.c=con;
-
-
+    public Model(String id,String ip,String t,String n){
+        this.id=id;
+        this.ip=ip;
+        this.t=t;
+        this.n=n;
     }
-    public ArrayList<String> get_Ids(){
-        return (ArrayList<String>)li.clone();
+    //------Getter--------
+    public String get_id(){
+        return id;
     }
-    public void add_id(String id){
-       /* int i=Integer.getInteger(id);
-        if(i==0){
-            node_id[i]=id;
-        }else{
-            for(int j=0;j<node_id.length;j++){
-                if(j==i){
+    public String get_ip(){
+        return ip;
+    }
+    public String get_t(){
+        return t;
+    }
+    public String get_n(){
+        return n;
+    }
+    //------setter--------
+    public void set_id(String id){
+        this.id=id;
+    }
+    public void set_ip(String ip){
+        this.ip=ip;
+    }
+    public void set_t(String t){
+        this.t=t;
+    }
+    public void set_n(String n){
+        this.n=n;
+    }
 
-                }
-            }
-        }*/
-        li.add(id);
+
+    public String toString(){
+        StringBuffer b=new StringBuffer();
+        b.append("id = "+id + "\n");
+        b.append("ip = "+ip + "\n");
+        b.append("t = "+t + "\n");
+        b.append("n = "+n + "\n");
+        return b.toString();
     }
 }
