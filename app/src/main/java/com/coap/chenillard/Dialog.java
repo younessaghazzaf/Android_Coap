@@ -37,7 +37,10 @@ public class Dialog extends DialogFragment{
                     public void onClick(DialogInterface dialog, int id) {
 
                         ed1=(EditText)linear.findViewById(R.id.edit_id);
-                        array.add(new Model(ed1.getText().toString(),"","",""));
+                        ed2=(EditText)linear.findViewById(R.id.edit_ip);
+                        ed3=(EditText)linear.findViewById(R.id.edit_t);
+                        ed4=(EditText)linear.findViewById(R.id.edit_n);
+                        array.add(new Model(ed1.getText().toString(),ed2.getText().toString(),ed3.getText().toString(),ed4.getText().toString()));
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

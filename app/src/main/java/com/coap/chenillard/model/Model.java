@@ -5,12 +5,13 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by controlberkani on 10/07/2015.
  */
-public class Model {
+public class Model implements Serializable{
     String id,ip,t,n;
 
     public Model(String id,String ip,String t,String n){

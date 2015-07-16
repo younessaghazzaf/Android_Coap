@@ -2,6 +2,7 @@ package com.coap.chenillard;
 
 
 import android.content.Context;
+import android.graphics.AvoidXfermode;
 import android.graphics.drawable.Drawable;
 
 import android.app.Activity;
@@ -23,19 +24,23 @@ import android.widget.Toast;
 
 import com.coap.chenillard.model.Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Main_chenil extends Activity {
     //--Initialisation of Views and model
+
     Button service;
     Boolean on=false;
     ListView list;
     ImageView img1;
     Drawable d1,d2;
     Dialog dialog;
-    Model model;
+    Model Current;
+    TextView id,ip,t,n;
     int i=0;
     adapt adapter;
+    Array_holder holder;
     ArrayList<Model> array;
     /*
     *
@@ -48,31 +53,71 @@ public class Main_chenil extends Activity {
     *
     * */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onSaveInstanceState(Bundle outstate){
+        super.onSaveInstanceState(outstate);
+
+        outstate.putSerializable("Current",Current);
+
+        Array_holder hold=new Array_holder((ArrayList<Model>)array.clone());
+        array.clear();
+        Toast.makeText(this,"saveInstance",Toast.LENGTH_LONG).show();
+        outstate.putSerializable("array", hold);
+        outstate.putBoolean("service",on);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle outstate){
+        super.onRestoreInstanceState(outstate);
+    }
+     @Override
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
         //----State model
-
         array=new ArrayList<Model>();
+         if(savedInstanceState!=null){
+             holder = (Array_holder) savedInstanceState.getSerializable("array");
+             on=savedInstanceState.getBoolean("service");
+                            }
+        if(holder!=null)
+            array=new ArrayList<Model>((ArrayList<Model>)holder.ar.clone());
+
         //l1 = (LinearLayout)getLayoutInflater().inflate(R.layout.z1_controller,null); // We can't add a layout that is the context of current activity
         service = (Button)findViewById(R.id.service);
         img1=(ImageView)findViewById(R.id.stateled);
+        //-------------------------------
+        id=(TextView)findViewById(R.id.t1);
+        ip=(TextView)findViewById(R.id.t2);
+        t=(TextView)findViewById(R.id.t3);
+        n=(TextView)findViewById(R.id.t4);
+        if(savedInstanceState!=null)
+            Current=(Model)savedInstanceState.getSerializable("Current");
+        if(Current!=null ){
+            this.id.setText("Id : "+Current.get_id());
+            this.ip.setText("Id : "+Current.get_ip());
+            this.t.setText("Id : "+Current.get_t());
+            this.n.setText("Id : "+Current.get_n());
+        }
         //-----------List Adapter---------
         adapter=new adapt(this);
         list=(ListView)findViewById(R.id.yes);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(Main_chenil.this,array.get(position).get_id(),Toast.LENGTH_SHORT).show();
 
+                Current=array.get(position);
+                Main_chenil.this.id.setText("Id : "+Current.get_id());
+                Main_chenil.this.ip.setText("Ip : "+Current.get_ip());
+                Main_chenil.this.t.setText("t : " + Current.get_t());
+                Main_chenil.this.n.setText("n : " + Current.get_n());
             }
         });
+
         adapter.setNotifyOnChange(true);
         list.setAdapter(adapter);
         //---example Add to list ------
-        adapter.add(new Model("123","123.AZE123.","123","11"));
-        adapter.add(new Model("124","123.AZE123.","123","11"));
-        adapter.add(new Model("125","123.AZE123.","123","11"));
+       // adapter.add(new Model("123","123.AZE123.","123","11"));
+        //adapter.add(new Model("124","123.AZE123.","123","11"));
+        //adapter.add(new Model("125","123.AZE123.","123","11"));
         //--------Dialog show----------
         dialog = new Dialog();
         dialog.SetAddapter(adapter);
@@ -84,7 +129,13 @@ public class Main_chenil extends Activity {
         //Toast.makeText(this,"rr",Toast.LENGTH_SHORT).show();
         d1=getResources().getDrawable(R.drawable.vert);
         d2=getResources().getDrawable(R.drawable.rouge);
-
+        if(on){
+            service.setText(R.string.off);
+            img1.setImageDrawable(d1);
+        }else{
+            service.setText(R.string.on);
+            img1.setImageDrawable(d2);
+        }
         //--------service On/off Listener button
         service.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +155,12 @@ public class Main_chenil extends Activity {
         //----------------------------------
 
     }
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Toast.makeText(this,"Restart",Toast.LENGTH_LONG).show();
 
+    }
     @Override
     protected void onStop(){
         //Buton.setVisibility(View.INVISIBLE);
@@ -115,13 +171,11 @@ public class Main_chenil extends Activity {
     @Override
     protected void onPause(){
        super.onPause();
-
-        i=100;
     }
     @Override
     protected void onResume(){
         super.onResume();
-
+        Toast.makeText(this,"Resume",Toast.LENGTH_LONG).show();
     }
     @Override
     protected void onDestroy(){
@@ -189,6 +243,12 @@ public class Main_chenil extends Activity {
         @Override
         public void onClick(View v) {
             dialog.show(getFragmentManager(),"Add_Led");
+        }
+    }
+    class Array_holder implements Serializable{
+        ArrayList<Model> ar;
+        public Array_holder(ArrayList<Model> a){
+            ar=a;
         }
     }
 }
