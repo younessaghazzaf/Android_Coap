@@ -36,6 +36,7 @@ public class Main_chenil extends Activity {
     ImageView img1;
     Drawable d1,d2;
     Dialog dialog;
+    Dialog2 dialog2;
     Model Current;
     TextView id,ip,t,n;
     int i=0;
@@ -72,8 +73,10 @@ public class Main_chenil extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
-        //----State model
+        //---------model--------
         array=new ArrayList<Model>();
+
+         //----------old instance Restore------
          if(savedInstanceState!=null){
              holder = (Array_holder) savedInstanceState.getSerializable("array");
              on=savedInstanceState.getBoolean("service");
@@ -93,9 +96,9 @@ public class Main_chenil extends Activity {
             Current=(Model)savedInstanceState.getSerializable("Current");
         if(Current!=null ){
             this.id.setText("Id : "+Current.get_id());
-            this.ip.setText("Id : "+Current.get_ip());
-            this.t.setText("Id : "+Current.get_t());
-            this.n.setText("Id : "+Current.get_n());
+            this.ip.setText("Ip : "+Current.get_ip());
+            this.t.setText("t : "+Current.get_t());
+            this.n.setText("n : "+Current.get_n());
         }
         //-----------List Adapter---------
         adapter=new adapt(this);
@@ -121,10 +124,13 @@ public class Main_chenil extends Activity {
         //--------Dialog show----------
         dialog = new Dialog();
         dialog.SetAddapter(adapter);
+        dialog2=new Dialog2();
+        dialog2.SetAddapter(adapter,this);
         //------------Add/remove Button---------
         ImageButton b1=(ImageButton)findViewById(R.id.imageb1);
         ImageButton b2=(ImageButton)findViewById(R.id.imageb2);
         b1.setOnClickListener(new Image_Listenner());
+        b2.setOnClickListener(new Image_Listenner2());
         //----------------------
         //Toast.makeText(this,"rr",Toast.LENGTH_SHORT).show();
         d1=getResources().getDrawable(R.drawable.vert);
@@ -236,6 +242,14 @@ public class Main_chenil extends Activity {
        public void add(Model t){
           super.add(t);
        }
+       @Override
+       public void remove(Model t){
+           super.remove(t);
+       }
+       @Override
+       public Model getItem(int t){
+           return super.getItem(t);
+       }
 
    }
     class Image_Listenner implements View.OnClickListener {
@@ -243,6 +257,14 @@ public class Main_chenil extends Activity {
         @Override
         public void onClick(View v) {
             dialog.show(getFragmentManager(),"Add_Led");
+        }
+    }
+    class Image_Listenner2 implements View.OnClickListener {
+
+        @Override
+        public void onClick(View v) {
+
+            dialog2.show(getFragmentManager(),"Add_Led2");
         }
     }
     class Array_holder implements Serializable{
