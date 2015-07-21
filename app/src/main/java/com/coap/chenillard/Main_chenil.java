@@ -73,7 +73,9 @@ public class Main_chenil extends Activity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chenil);
-        //---------model--------
+         Toast.makeText(this,"onCreate",Toast.LENGTH_LONG).show();
+
+         //---------model--------
         array=new ArrayList<Model>();
 
          //----------old instance Restore------
@@ -125,7 +127,7 @@ public class Main_chenil extends Activity {
         dialog = new Dialog();
         dialog.SetAddapter(adapter);
         dialog2=new Dialog2();
-        dialog2.SetAddapter(adapter,this);
+        dialog2.SetAddapter(adapter,this,array);
         //------------Add/remove Button---------
         ImageButton b1=(ImageButton)findViewById(R.id.imageb1);
         ImageButton b2=(ImageButton)findViewById(R.id.imageb2);
@@ -267,8 +269,9 @@ public class Main_chenil extends Activity {
             dialog2.show(getFragmentManager(),"Add_Led2");
         }
     }
-    class Array_holder implements Serializable{
-        ArrayList<Model> ar;
+    public static class Array_holder implements Serializable{
+        private static final long serialVersionUID = 1L;
+        private ArrayList<Model> ar;
         public Array_holder(ArrayList<Model> a){
             ar=a;
         }

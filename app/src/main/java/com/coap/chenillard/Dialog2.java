@@ -14,18 +14,22 @@ import android.widget.Toast;
 
 import com.coap.chenillard.model.Model;
 
+import java.util.ArrayList;
+
 /**
  * Created by controlberkani on 10/07/2015.
  */
 public class Dialog2 extends DialogFragment{
     ArrayAdapter<Model> array;
     RelativeLayout linear;
+    ArrayList<Model> ar;
     EditText ed1;
     Model mod;
     Context c;
-    public  void SetAddapter( ArrayAdapter<Model> a,Context con){
+    public  void SetAddapter( ArrayAdapter<Model> a,Context con,ArrayList<Model> a1){
         array=a;
         c=con;
+        ar=a1;
     }
     @Override
     public android.app.Dialog onCreateDialog(Bundle saveInstance){
@@ -43,7 +47,7 @@ public class Dialog2 extends DialogFragment{
 
                         ed1 = (EditText) linear.findViewById(R.id.dia2);
                         mod = getModel(ed1.getText().toString());
-                        if (mod != null) {
+                        if(mod!=null){
                             array.remove(mod);
                         }
                         // array.remove();
@@ -63,8 +67,9 @@ public class Dialog2 extends DialogFragment{
     public Model getModel(String id){
         Model in=null;
         int i=0;
+        int j=ar.size();
         // to remove bugs!!!
-        while(array.getItem(i)!=null){
+        while(i<j){
             if(array.getItem(i).get_id().compareTo(id)==0){
                 in=array.getItem(i);
             }
