@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="horiz">900px</dimen>
+    <dimen name="horiz">750px</dimen>
     <dimen name="verti">1000px</dimen>
 
 </resources>

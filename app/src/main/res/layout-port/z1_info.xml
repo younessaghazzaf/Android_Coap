@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:src="@drawable/remove"
         android:layout_toRightOf="@+id/imageb1"/>
+    <ImageButton
+        android:id="@+id/imageb3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit"
+        android:layout_toRightOf="@+id/imageb2"/>
 </RelativeLayout>

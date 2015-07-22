@@ -60,7 +60,6 @@ public class Main_chenil extends Activity {
         outstate.putSerializable("Current",Current);
 
         Array_holder hold=new Array_holder((ArrayList<Model>)array.clone());
-        array.clear();
         Toast.makeText(this,"saveInstance",Toast.LENGTH_LONG).show();
         outstate.putSerializable("array", hold);
         outstate.putBoolean("service",on);
