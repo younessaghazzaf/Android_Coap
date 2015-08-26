@@ -2,5 +2,6 @@
 <resources>
     <string name="on">Activer</string>
     <string name="off">Desactiver</string>
+    <string name="reset">réinitialiser</string>
     <string name="service">service</string>
 </resources>

@@ -35,7 +35,6 @@ public class Dialog extends DialogFragment{
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-
                         ed1=(EditText)linear.findViewById(R.id.edit_id);
                         ed2=(EditText)linear.findViewById(R.id.edit_ip);
                         ed3=(EditText)linear.findViewById(R.id.edit_t);

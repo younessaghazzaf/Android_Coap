@@ -10,6 +10,13 @@
     android:text="@string/on"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     />
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,5 +33,6 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/rouge"/>
+
     </LinearLayout>
 </LinearLayout>
